@@ -19,3 +19,7 @@
 17. if function return it then we need to tell the type of return value.
 18. null is a type that is null.
 19. never is a type that returns nothing.
+20. type inference is a feature that allows typescript to infer the type of a variable based on the value assigned to it.
+21. type annotation is a way to tell typescript the type of a variable.
+22. annotation and assertion are the same thing.
+23. 

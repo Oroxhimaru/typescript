@@ -94,4 +94,12 @@ console.log(e);
 }
 
 
+{
+    //type inference
+    let a = 1; //now value will define by itself that it is a number. this is called type inference
+}
 
+{
+    //type  anotation
+    let a: number = 1; //we have to define the type of variable. this is called type anotation
+}
