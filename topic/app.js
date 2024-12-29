@@ -34,3 +34,46 @@ console.log(e);
     })(Color || (Color = {}));
     console.log(Color.Red);
 }
+{
+    //any
+    var z = 1;
+    let a;
+}
+{
+    //unknown
+    let x;
+    x = 1;
+    x = "hello";
+    if (typeof x === "string") {
+        console.log(x);
+    }
+}
+{
+    //void
+    function hello() {
+        console.log("hello");
+    }
+}
+{
+    //return type
+    function add(a, b) {
+        return a + b;
+    }
+}
+{
+    //null
+    let x;
+    x = "hassan";
+    x = null;
+    //  x = 11;  error will come because either null or string
+}
+{
+    //never
+    // function abdc() : never{
+    //     while (true) {
+    //         console.log("hello");
+    //     }
+    // }
+    //  abdc();
+    //  console.log(abdc);  //as you can see this function is dull now because it type is never
+}

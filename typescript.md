@@ -12,4 +12,10 @@
 10. prmitive types are stored in stack and reference types are stored in heap.
 11. difference between array and tuple is that array can store any type of data but tuple can store only specific type of data.
 12. enum / enumeration is a way to define a set of named constants. 
-13. 
+13. Any in typescript is a type that can be any type of data.
+14. unknown is a type that can be any type of data but it is not assignable to any other type.
+15. you can only  use unknown when you describe the type. while in any you can use it without describing the type.
+16. void is a type that can be used as a return type of a function that does not return anything.
+17. if function return it then we need to tell the type of return value.
+18. null is a type that is null.
+19. never is a type that returns nothing.
