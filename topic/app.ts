@@ -103,3 +103,65 @@ console.log(e);
     //type  anotation
     let a: number = 1; //we have to define the type of variable. this is called type anotation
 }
+
+
+//interfaces and type aliases
+{
+    interface User{
+        name: string;
+        age: number;
+    }
+    function printUser(obj: User){
+        console.log(obj.name);
+        //obj.age;
+    }
+    printUser({name: "hassan", age: 20}); //have to give value to all properties of interface otherwise error will come
+}
+
+//also we can make new  property opitional by adding ? after the property name.
+{
+    interface User{
+        name: string;
+        age: number;
+        email?: string; //it is optional
+    }
+    function printUser(obj: User){
+        console.log(obj.name);
+    }
+    printUser({name: "hassan", age: 20});
+}
+
+// extending interface
+{
+    interface User{
+        name: string;
+        age: number;
+        email?: string;
+    }
+    interface Admin extends User{ //admin can have all properties of user plus his own properties
+        role: string;
+    }
+    function printUser(obj: Admin){
+        console.log(obj.name);
+         //obj.
+    }
+    printUser({name: "hassan", age: 20, role: "admin"});
+}
+
+
+//two interfaces of same name can be used in same file
+{
+    interface User{
+        name: string;
+        age: number;
+        email?: string;
+    }
+    interface User{
+        role: string;
+    }
+    function printUser(obj: User){
+        console.log(obj.name);
+        //obj.
+    }
+    printUser({name: "hassan", age: 20, role: "admin"});
+}

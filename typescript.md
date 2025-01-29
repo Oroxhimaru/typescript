@@ -22,4 +22,7 @@
 20. type inference is a feature that allows typescript to infer the type of a variable based on the value assigned to it.
 21. type annotation is a way to tell typescript the type of a variable.
 22. annotation and assertion are the same thing.
-23. 
+23. interface is a way to define a type of object. 
+24. also in interface you can't add new properties to the object. otherwise it will throw an error. you need to describe the new properties in the interface. also we can make new  property opitional by adding ? after the property name.
+25. extending interface is a way to extend the interface, means using the other interface in the current interface.
+26. two interface of same  name can be merged.
