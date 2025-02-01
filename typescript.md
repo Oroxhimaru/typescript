@@ -30,3 +30,10 @@
 28. differnce between type alias and interface is that you can't have same name type but in interface you can merge two interface of same name.
 29. type alias can be used with primitive types, union types, intersection types, tuple types, and literal types. while interface use for object types.
 30. intersection types are used to combine multiple types into one.
+31. class is a blueprint for creating objects.
+32. constructor is a special method that is called when an object is created. when class use first thing which run is constructor.
+33. if you directly give value in construuctor then use public keyword.
+34. in access modifier the difference between public and private is that public is accessible from outside the class and private is accessible only from inside the class.
+35. in typescript we can use access modifier in constructor parameter.
+36. getters and setters are used to get and set the value of a property.
+37. 

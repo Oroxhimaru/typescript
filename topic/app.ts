@@ -197,4 +197,181 @@ console.log(e);
     console.log(a);
 }
 
+//Classes & Objects
+{
+    class User {
+        name = "hassan";
+        age = 20;
+        email = "hassan@gmail.com";
+    }
+    let user = new User();
+    let user2 = new User();
+}
 
+//constructor
+{
+    class User {
+        name: string;
+        age: number;
+        email: string;
+        constructor(name: string, age: number, email: string) {
+            this.name = name;
+            this.age = age;
+            this.email = email;
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com"); //hassan goes to name of constructor then got saved in this.name
+    console.log(user);
+    let user2 = new User("ali", 20, "ali@gmail.com");
+}
+
+//public keyword
+{
+    class Example {
+        public name: string;  // Can be accessed anywhere
+    
+        constructor(name: string) {
+            this.name = name;
+        }
+    
+        public greet() {
+            console.log(`Hello, ${this.name}`);
+        }
+    }
+    
+    const obj = new Example("Alice");
+    console.log(obj.name); // ✅ Allowed
+    obj.greet(); // ✅ Allowed
+    
+}
+
+//this keyword
+{
+    class User {
+        constructor(public name: string, public age: number, public email: string) {
+        }
+        print() {
+            console.log(this.name);
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com");
+    user.print();
+}
+
+//access modifiers private
+{
+    class Example {
+        private secret: string;
+    
+        constructor(secret: string) {
+            this.secret = secret;
+        }
+    
+        showSecret() {
+            console.log(`Secret is: ${this.secret}`); // ✅ Allowed inside the class
+        }
+    }
+    
+    const obj = new Example("Hidden");
+   // console.log(obj.secret); // ❌ Error: Property 'secret' is private
+    obj.showSecret(); // ✅ Allowed
+    
+}
+
+//protected
+{
+    class Parent {
+        protected secret: string;
+    
+        constructor(secret: string) {
+            this.secret = secret;
+        }
+    }
+    
+    class Child extends Parent {
+        showSecret() {
+            console.log(`Secret from parent: ${this.secret}`); // ✅ Allowed in subclass, this not allowed in private
+        }
+    }
+    
+    const obj = new Child("Hidden Message");
+   // console.log(obj.secret); // ❌ Error: Property 'secret' is protected
+    obj.showSecret(); // ✅ Allowed (accessed inside subclass)
+    
+}
+
+//Modifier	Inside Class	Outside Class	Subclasses (Child Classes)
+// public	✅ Yes	✅ Yes	✅ Yes
+// private	✅ Yes	❌ No	❌ No
+// protected	✅ Yes	❌ No	✅ Yes
+
+//readonly
+{
+    class User {
+        readonly name: string;
+        constructor(name: string) {
+            this.name = name;
+        }
+    }
+    let user = new User("hassan");
+   // user.name = "ali"; //error ,  cannnot cchange the value of name because it is readonly
+}
+
+//optional properties 
+{
+    class User {
+        name: string;
+        age: number;
+        email?: string; //optional property
+        constructor(name: string, age: number, email?: string) {
+            this.name = name;
+            this.age = age;
+            this.email = email;
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com");
+    console.log(user);
+}
+
+
+//parameter properties
+{
+    class User {
+        constructor(public name: string, public age: number, public email?: string) {
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com");
+    console.log(user);
+    //this public private this known as parameter properties
+}
+
+//getters and setters
+{
+  class Person {
+    private _name: string = "";
+
+    // Getter
+    get name(): string {
+      return this._name;
+    }
+
+    // Setter
+    set name(newName: string) {
+      if (newName.length < 3) {
+        throw new Error("Name must be at least 3 characters long.");
+      }
+      this._name = newName;
+    }
+  }
+
+  const person = new Person();
+  person.name = "John"; // Using setter
+  console.log(person.name); // Using getter
+
+  /*Explanation:
+_name is a private property (not directly accessible outside the class).
+get name() allows reading the value of _name.
+set name(value) lets you update _name, with a validation check.
+If the name is too short, it throws an error.
+*/
+}

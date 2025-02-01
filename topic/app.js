@@ -133,3 +133,154 @@ console.log(e);
     };
     console.log(a);
 }
+//Classes & Objects
+{
+    class User {
+        constructor() {
+            this.name = "hassan";
+            this.age = 20;
+            this.email = "hassan@gmail.com";
+        }
+    }
+    let user = new User();
+    let user2 = new User();
+}
+//constructor
+{
+    class User {
+        constructor(name, age, email) {
+            this.name = name;
+            this.age = age;
+            this.email = email;
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com"); //hassan goes to name of constructor then got saved in this.name
+    console.log(user);
+    let user2 = new User("ali", 20, "ali@gmail.com");
+}
+//public keyword
+{
+    class Example {
+        constructor(name) {
+            this.name = name;
+        }
+        greet() {
+            console.log(`Hello, ${this.name}`);
+        }
+    }
+    const obj = new Example("Alice");
+    console.log(obj.name); // ✅ Allowed
+    obj.greet(); // ✅ Allowed
+}
+//this keyword
+{
+    class User {
+        constructor(name, age, email) {
+            this.name = name;
+            this.age = age;
+            this.email = email;
+        }
+        print() {
+            console.log(this.name);
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com");
+    user.print();
+}
+//access modifiers private
+{
+    class Example {
+        constructor(secret) {
+            this.secret = secret;
+        }
+        showSecret() {
+            console.log(`Secret is: ${this.secret}`); // ✅ Allowed inside the class
+        }
+    }
+    const obj = new Example("Hidden");
+    // console.log(obj.secret); // ❌ Error: Property 'secret' is private
+    obj.showSecret(); // ✅ Allowed
+}
+//protected
+{
+    class Parent {
+        constructor(secret) {
+            this.secret = secret;
+        }
+    }
+    class Child extends Parent {
+        showSecret() {
+            console.log(`Secret from parent: ${this.secret}`); // ✅ Allowed in subclass, this not allowed in private
+        }
+    }
+    const obj = new Child("Hidden Message");
+    // console.log(obj.secret); // ❌ Error: Property 'secret' is protected
+    obj.showSecret(); // ✅ Allowed (accessed inside subclass)
+}
+//Modifier	Inside Class	Outside Class	Subclasses (Child Classes)
+// public	✅ Yes	✅ Yes	✅ Yes
+// private	✅ Yes	❌ No	❌ No
+// protected	✅ Yes	❌ No	✅ Yes
+//readonly
+{
+    class User {
+        constructor(name) {
+            this.name = name;
+        }
+    }
+    let user = new User("hassan");
+    // user.name = "ali"; //error ,  cannnot cchange the value of name because it is readonly
+}
+//optional properties 
+{
+    class User {
+        constructor(name, age, email) {
+            this.name = name;
+            this.age = age;
+            this.email = email;
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com");
+    console.log(user);
+}
+//parameter properties
+{
+    class User {
+        constructor(name, age, email) {
+            this.name = name;
+            this.age = age;
+            this.email = email;
+        }
+    }
+    let user = new User("hassan", 20, "hassan@gmail.com");
+    console.log(user);
+    //this public private this known as parameter properties
+}
+//getters and setters
+{
+    class Person {
+        constructor() {
+            this._name = "";
+        }
+        // Getter
+        get name() {
+            return this._name;
+        }
+        // Setter
+        set name(newName) {
+            if (newName.length < 3) {
+                throw new Error("Name must be at least 3 characters long.");
+            }
+            this._name = newName;
+        }
+    }
+    const person = new Person();
+    person.name = "John"; // Using setter
+    console.log(person.name); // Using getter
+    /*Explanation:
+  _name is a private property (not directly accessible outside the class).
+  get name() allows reading the value of _name.
+  set name(value) lets you update _name, with a validation check.
+  If the name is too short, it throws an error.
+  */
+}
