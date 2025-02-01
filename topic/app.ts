@@ -165,3 +165,36 @@ console.log(e);
     }
     printUser({name: "hassan", age: 20, role: "admin"});
 }
+
+
+// type aliases
+{
+    type Human = string;
+    let a: Human = "hassan";
+}
+
+//type aliases another example
+{
+    type value = string | number;
+    let a: value = "hassan";
+}
+
+// intersection type
+{
+  type User = {
+        name: string;
+        age: number;
+    }
+    type Admin = {
+        role: string;
+    }
+    type UserAdmin = User & Admin; //UserAdmin will have all properties of User and Admin
+    let a: UserAdmin = {
+        name: "hassan",
+        age: 20,
+        role: "admin"
+    }
+    console.log(a);
+}
+
+

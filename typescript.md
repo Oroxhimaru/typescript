@@ -26,3 +26,7 @@
 24. also in interface you can't add new properties to the object. otherwise it will throw an error. you need to describe the new properties in the interface. also we can make new  property opitional by adding ? after the property name.
 25. extending interface is a way to extend the interface, means using the other interface in the current interface.
 26. two interface of same  name can be merged.
+27. type alias is use to give a name to a type.
+28. differnce between type alias and interface is that you can't have same name type but in interface you can merge two interface of same name.
+29. type alias can be used with primitive types, union types, intersection types, tuple types, and literal types. while interface use for object types.
+30. intersection types are used to combine multiple types into one.

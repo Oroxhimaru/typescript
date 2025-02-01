@@ -116,3 +116,20 @@ console.log(e);
     }
     printUser({ name: "hassan", age: 20, role: "admin" });
 }
+// type aliases
+{
+    let a = "hassan";
+}
+//type aliases another example
+{
+    let a = "hassan";
+}
+// intersection type
+{
+    let a = {
+        name: "hassan",
+        age: 20,
+        role: "admin"
+    };
+    console.log(a);
+}
