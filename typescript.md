@@ -36,4 +36,4 @@
 34. in access modifier the difference between public and private is that public is accessible from outside the class and private is accessible only from inside the class.
 35. in typescript we can use access modifier in constructor parameter.
 36. getters and setters are used to get and set the value of a property.
-37. 
+37. static members are used to access the members of a class without creating an instance of the class.

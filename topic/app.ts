@@ -375,3 +375,14 @@ set name(value) lets you update _name, with a validation check.
 If the name is too short, it throws an error.
 */
 }
+
+
+//static member example
+{ //we can use static keyword to make a member static and without new keyword we can access it
+    class Circle {
+        static pi: number = 3.14;
+        static calculateArea(radius: number): number {
+            return Circle.pi * radius * radius;
+        }
+    }
+ }

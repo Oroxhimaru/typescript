@@ -284,3 +284,12 @@ console.log(e);
   If the name is too short, it throws an error.
   */
 }
+//static member example
+{ //we can use static keyword to make a member static and without new keyword we can access it
+    class Circle {
+        static calculateArea(radius) {
+            return Circle.pi * radius * radius;
+        }
+    }
+    Circle.pi = 3.14;
+}
