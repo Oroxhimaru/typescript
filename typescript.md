@@ -37,3 +37,5 @@
 35. in typescript we can use access modifier in constructor parameter.
 36. getters and setters are used to get and set the value of a property.
 37. static members are used to access the members of a class without creating an instance of the class.
+38. An abstract class cannot be instantiated directly, but it can be inherited by other classes. Abstract classes can have both abstract and non-abstract methods
+39. functions in tyypescript are first class citizens. meaning they can be assigned to variables, passed as arguments to other functions, and returned from functions.
